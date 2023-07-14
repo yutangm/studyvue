@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回顾Object•defineproperty</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+    let num = 20
+    let preson = {
+        name : '张三',
+        sex : '男'
+    }
+    // 不能遍历
+    Object.defineProperty(preson, 'age', {
+        // value : 18,
+        // // 控制变量是否可以枚举，可遍历
+        // enumerable : true,
+        // // 属性是否可以被修改
+        // writable : true,
+        // // 属性是否可以被删除
+        // configurable : true,
+        get : function() {
+            return num
+        },
+        set(value) {
+            num = value
+        }
+    })
+    console.log(preson)
+</script>
